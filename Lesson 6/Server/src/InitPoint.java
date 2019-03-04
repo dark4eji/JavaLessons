@@ -1,7 +1,8 @@
-import core.EchoServer;
+import core.ChatServer;
 
 public class InitPoint {
     public static void main(String[] args) {
-        EchoServer.startServer();
+        new ChatServer();
     }
+
 }

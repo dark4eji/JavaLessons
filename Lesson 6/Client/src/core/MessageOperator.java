@@ -6,7 +6,28 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class MessageOperator {
+	
+	public static void sendMessage(JTextField textField, JTextArea textArea, DataOutputStream out) {
+		if (!textField.getText().trim().isEmpty()) {
+            try {
+                String msgToServer = new SimpleDateFormat("hh:mm:ss").format(new Date())
+                        + "\n"
+                        + textField.getText()
+                        + "\n\n";
+						
+                textField.setText("");
+                textArea.append(msgToServer);
+                textField.grabFocus();
+                out.writeUTF(msgToServer);
+				
+            } catch (IOException e){
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Ошибка отправки сообщения");
+            }
+        }
+    }
 
     /**
      * Сохраняет текущую переписку

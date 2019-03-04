@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfe67a28-8237-4c63-9c69-83a713c987e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Client/src/core/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lesson 5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lesson 5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/Client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/GUI/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/GUI/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/InitPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/InitPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/core/MessageOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/core/MessageOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/core/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/core/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InitPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EchoServer.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,23 +34,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/InitPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="168">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#93#94#0" expanded="true" />
-                <element signature="e#133#134#0" expanded="true" />
+                <element signature="e#116#117#0" expanded="true" />
+                <element signature="e#164#165#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/core/EchoServer.java">
+        <entry file="file://$PROJECT_DIR$/src/core/ChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            <state relative-caret-position="-78">
+              <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3084#3328#0" expanded="true" />
+                <element signature="e#3327#3328#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,14 +75,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/core/EchoServer.java" />
         <option value="$PROJECT_DIR$/src/InitPoint.java" />
+        <option value="$PROJECT_DIR$/src/core/ChatServer.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-265" />
-    <option name="y" value="146" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="117" />
+    <option name="y" value="139" />
     <option name="width" value="1296" />
-    <option name="height" value="1044" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -75,6 +91,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -87,17 +105,21 @@
               <item name="Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551610113435" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551703032014" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Client" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -153,10 +175,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-265" y="146" width="1296" height="1044" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2540453" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -165,7 +186,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32821077" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32719395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -186,23 +207,26 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/core.java" />
+    <entry file="file://$PROJECT_DIR$/src/core/EchoServer.java" />
     <entry file="file://$PROJECT_DIR$/src/InitPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#93#94#0" expanded="true" />
-            <element signature="e#133#134#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/EchoServer.java">
+    <entry file="file://$PROJECT_DIR$/src/core/ChatServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        <state relative-caret-position="-78">
+          <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3084#3328#0" expanded="true" />
+            <element signature="e#3327#3328#0" expanded="true" />
           </folding>
         </state>
       </provider>

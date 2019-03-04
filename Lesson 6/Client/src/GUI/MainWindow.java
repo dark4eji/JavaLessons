@@ -10,6 +10,8 @@ import java.io.IOException;
 
 public class MainWindow extends JFrame {
     private final int WIN_MARGIN = 4;
+	private String address = "localhost";
+	private int port = 8189;
 
     private JPanel showMessagesPanel = new JPanel();
     private JPanel sendMessagesPanel = new JPanel();
@@ -28,19 +30,13 @@ public class MainWindow extends JFrame {
     private Font messagesFont = new Font("Segoe UI", Font.PLAIN, 14);
     private JScrollPane scroll = new JScrollPane();
 
-    Network network = new Network("localhost", 8189, textArea);
+    Network network = new Network(address, port);
 
     public MainWindow(){
         super("Chat 0.1");
         setVisible(true);
         setSize(600, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        try {
-            network.openConnection();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         // Добавление панели меню
         actionsMenu.add(save);
@@ -84,7 +80,7 @@ public class MainWindow extends JFrame {
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                network.sendMessage(textField, textArea);
+                MessageOperator.sendMessage(textField, textArea, network.getOutputStream());
             }
         });
 
@@ -93,7 +89,7 @@ public class MainWindow extends JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    network.sendMessage(textField, textArea);
+                    MessageOperator.sendMessage(textField, textArea, network.getOutputStream());
                 }
             }
         });
@@ -111,25 +107,34 @@ public class MainWindow extends JFrame {
         exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-                try {
-                    network.out.writeUTF("/end");
+				try {
+                    network.getOutputStream().writeUTF("/end");
                     network.closeConnection();
                 } catch (IOException exc) {
                     exc.printStackTrace();
                 }
+                System.exit(0);
             }
         });
+
+        //addWindowListener(new WindowAdapter() {
+        //    @Override
+        //    public void windowClosing(WindowEvent e) {
+        //        super.windowClosing(e);
+        //        try {
+        //            network.getOutputStream().writeUTF("/end");
+        //            network.closeConnection();
+        //        } catch (IOException exc) {
+        //            exc.printStackTrace();
+        //        }
+        //    }
+        //});
+
+        try {
+            network.openConnection(textArea);
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Не удалось подключиться к серверу");
+        }
     }
 }
-
-
-
-

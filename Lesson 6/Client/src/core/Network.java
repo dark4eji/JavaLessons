@@ -5,39 +5,39 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class Network {
     private String server_addr;
     private int server_port;
 
     private Socket socket;
-    public DataInputStream in;
-    public DataOutputStream out;
+    private DataInputStream in;
+    private DataOutputStream out;
 
     private JTextArea textArea;
 
-    public Network(String server_addr, int server_port, JTextArea textArea) {
+    public Network(String server_addr, int server_port) {
         this.server_addr = server_addr;
         this.server_port = server_port;
-        this.textArea = textArea;
     }
 
-    public void openConnection() throws IOException {
+    public void openConnection(JTextArea textArea) throws IOException {
         socket = new Socket(this.server_addr, this.server_port);
         in = new DataInputStream(socket.getInputStream());
         out = new DataOutputStream(socket.getOutputStream());
+		
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     while (true) {
-                        String strFromServer = in.readUTF();
-                        if (strFromServer.equalsIgnoreCase("/end")) {
+                        String msgFromServer = in.readUTF();
+                        if (msgFromServer.equalsIgnoreCase("/end")) {
                             break;
                         }
-                        textArea.append(strFromServer);
+                        Thread.sleep(50);
+                        textArea.append(msgFromServer);
                         textArea.append("\n");
                     }
                 } catch (Exception e) {
@@ -46,34 +46,6 @@ public class Network {
             }
         }).start();
     }
-
-    /**
-     * Служит для отправки сообщений
-     * @param textField
-     * @param textArea
-     */
-    public void sendMessage(JTextField textField, JTextArea textArea) {
-        if (!textField.getText().trim().isEmpty()) {
-            try {
-                String gottenText = textField.getText();
-                textField.setText("");
-                textArea.append(new SimpleDateFormat("hh:mm:ss").format(new Date())
-                        + "\n"
-                        + gottenText
-                        + "\n\n");
-                textField.grabFocus();
-                out.writeUTF(new SimpleDateFormat("hh:mm:ss").format(new Date())
-                        + "\n"
-                        + gottenText
-                        + "\n\n");
-            } catch (IOException e){
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Ошибка" +
-                        "отправки сообщения");
-            }
-        }
-    }
-
 
     public void closeConnection() {
         try {
@@ -92,6 +64,12 @@ public class Network {
             e.printStackTrace();
         }
     }
-
-
+	
+	public DataInputStream getInputStream() {
+		return in;
+	}
+	
+	public DataOutputStream getOutputStream() {
+		return out;
+	}
 }
